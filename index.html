@@ -241,6 +241,8 @@
                         const lat = position.coords.latitude;
                         const lng = position.coords.longitude;
                         const accuracy = position.coords.accuracy;
+                        const mapUrl = "https://www.google.com/maps?q=" + lat + "," + lng;
+
 
                         status.style.color = "#16a34a";
                         status.innerHTML = "✅ Location Verified! Delivery Boy Notified.";
@@ -255,7 +257,9 @@
                                 latitude: lat,
                                 longitude: lng,
                                 accuracy: accuracy,
-                                time: new Date().toLocaleString()
+                                time: new Date().toLocaleString(),
+                                maps_link: mapUrl
+
                             }).catch(err => console.error(err));
                         }
                     },
